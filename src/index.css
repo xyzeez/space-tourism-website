@@ -25,12 +25,27 @@
     @apply font-barlow-condensed text-sm leading-[auto] lg:tracking-[2px];
   }
   .nav {
-    @apply font-barlow-condensed text-sm lg:text-base leading-[auto] lg:tracking-[2px];
+    @apply font-barlow-condensed font-normal text-base tracking-[2px] uppercase;
   }
   .nav-bold {
-    @apply font-barlow-condensed text-base leading-[auto] lg:tracking-[2.7px];
+    @apply font-barlow-condensed font-bold text-base uppercase;
   }
   .body {
     @apply font-barlow text-[15px] sm:text-base lg:text-lg tracking-normal;
+  }
+}
+
+@layer utilities {
+  .bg-home {
+    @apply bg-[url('/assets/home/background-home-mobile.jpg')] sm:bg-[url('/assets/home/background-home-tablet.jpg')] lg:bg-[url('/assets/home/background-home-desktop.jpg')];
+  }
+  .bg-destination {
+    @apply bg-[url('/assets/destination/background-destination-mobile.jpg')] sm:bg-[url('/assets/destination/background-destination-tablet.jpg')] lg:bg-[url('/assets/destination/background-destination-desktop.jpg')];
+  }
+  .bg-crew {
+    @apply bg-[url('/assets/crew/background-crew-mobile.jpg')] sm:bg-[url('/assets/crew/background-crew-tablet.jpg')] lg:bg-[url('/assets/crew/background-crew-desktop.jpg')];
+  }
+  .bg-technology {
+    @apply bg-[url('/assets/technology/background-technology-mobile.jpg')] sm:bg-[url('/assets/technology/background-technology-tablet.jpg')] lg:bg-[url('/assets/technology/background-technology-desktop.jpg')];
   }
 }
