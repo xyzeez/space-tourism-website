@@ -11,7 +11,6 @@ export default {
       white: 'hsl(0,0%,100%)',
       blue: 'hsl(231,77%,90%)',
       navy: 'hsl(230,35%,7%)',
-      nav: 'hsl(230, 35%, 7%)',
       transparent: 'transparent',
     },
   },
