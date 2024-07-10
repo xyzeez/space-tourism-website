@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // Pages
 import Home from './pages/Home';
@@ -15,7 +15,7 @@ const App = () => {
     <BrowserRouter>
       <AppLayout>
         <Routes>
-          <Route index element={<Navigate replace to="home" />} />
+          <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="destination" element={<Destination />} />
           <Route path="crew" element={<Crew />} />
