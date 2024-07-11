@@ -4,48 +4,54 @@
 
 @layer base {
   .heading-xl {
-    @apply font-belle text-[80px] sm:text-[144px] leading-[auto] tracking-normal;
+    /*  */
+    @apply font-belle text-[80px] md:text-[144px] tracking-normal leading-[normal];
   }
   .heading-l {
-    @apply font-belle text-[56px] sm:text-[80px] lg:text-[96px] leading-[auto] tracking-normal;
+    @apply font-belle text-[56px] md:text-[80px] lg:text-[96px] tracking-normal;
   }
   .heading-m {
-    @apply font-belle text-2xl sm:text-[40px] lg:text-[56px] leading-[auto] tracking-normal;
+    @apply font-belle text-2xl md:text-[40px] lg:text-[56px] tracking-normal;
   }
   .heading-s {
-    @apply font-belle text-lg sm:text-2xl lg:text-[32px] leading-[auto] tracking-normal;
+    /*  */
+    @apply font-belle text-lg/[normal] md:text-[32px] tracking-normal;
   }
   .heading-xs {
-    @apply font-barlow-condensed text-base sm:text-xl lg:text-[28px] leading-[auto] lg:tracking-[4px];
+    /*  */
+    @apply font-barlow-condensed text-base/[normal] tracking-[0.15em] md:text-[28px] md:tracking-[4px];
   }
   .subheading-l {
-    @apply font-belle text-[28px] leading-[auto] lg:tracking-normal;
+    @apply font-belle text-[28px] lg:tracking-normal;
   }
   .subheading-s {
-    @apply font-barlow-condensed text-sm leading-[auto] lg:tracking-[2px];
+    @apply font-barlow-condensed text-sm lg:tracking-[2px];
   }
   .nav {
-    @apply font-barlow-condensed font-normal text-base tracking-[2px] uppercase;
+    /*  */
+    @apply font-barlow-condensed font-normal text-base/[normal] tracking-[2px] uppercase;
   }
   .nav-bold {
-    @apply font-barlow-condensed font-bold text-base uppercase;
+    /*  */
+    @apply font-barlow-condensed font-bold text-base/[normal] tracking-[2.7px] uppercase;
   }
   .body {
-    @apply font-barlow text-[15px] sm:text-base lg:text-lg tracking-normal;
+    /*  */
+    @apply font-barlow text-[15px] leading-[1.8] md:text-base/[1.8] lg:text-lg/[1.8] tracking-normal;
   }
 }
 
 @layer utilities {
   .bg-home {
-    @apply bg-[url('/assets/home/background-home-mobile.jpg')] sm:bg-[url('/assets/home/background-home-tablet.jpg')] lg:bg-[url('/assets/home/background-home-desktop.jpg')];
+    @apply bg-[url('/assets/home/background-home-mobile.jpg')] md:bg-[url('/assets/home/background-home-tablet.jpg')] lg:bg-[url('/assets/home/background-home-desktop.jpg')];
   }
   .bg-destination {
-    @apply bg-[url('/assets/destination/background-destination-mobile.jpg')] sm:bg-[url('/assets/destination/background-destination-tablet.jpg')] lg:bg-[url('/assets/destination/background-destination-desktop.jpg')];
+    @apply bg-[url('/assets/destination/background-destination-mobile.jpg')] md:bg-[url('/assets/destination/background-destination-tablet.jpg')] lg:bg-[url('/assets/destination/background-destination-desktop.jpg')];
   }
   .bg-crew {
-    @apply bg-[url('/assets/crew/background-crew-mobile.jpg')] sm:bg-[url('/assets/crew/background-crew-tablet.jpg')] lg:bg-[url('/assets/crew/background-crew-desktop.jpg')];
+    @apply bg-[url('/assets/crew/background-crew-mobile.jpg')] md:bg-[url('/assets/crew/background-crew-tablet.jpg')] lg:bg-[url('/assets/crew/background-crew-desktop.jpg')];
   }
   .bg-technology {
-    @apply bg-[url('/assets/technology/background-technology-mobile.jpg')] sm:bg-[url('/assets/technology/background-technology-tablet.jpg')] lg:bg-[url('/assets/technology/background-technology-desktop.jpg')];
+    @apply bg-[url('/assets/technology/background-technology-mobile.jpg')] md:bg-[url('/assets/technology/background-technology-tablet.jpg')] lg:bg-[url('/assets/technology/background-technology-desktop.jpg')];
   }
 }
