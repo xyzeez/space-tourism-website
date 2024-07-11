@@ -4,7 +4,11 @@ const Logo = () => {
   return (
     <div className="w-fit">
       <Link to="/">
-        <img src="/assets/shared/logo.svg" alt="" className="size-12" />
+        <img
+          src="/assets/shared/logo.svg"
+          alt=""
+          className="size-10 md:size-12"
+        />
       </Link>
     </div>
   );
