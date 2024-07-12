@@ -3,12 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  abbr {
+    text-decoration: none;
+  }
   .heading-xl {
     /*  */
     @apply font-belle text-[80px] md:text-[144px] tracking-normal leading-[normal];
   }
   .heading-l {
-    @apply font-belle text-[56px] md:text-[80px] lg:text-[96px] tracking-normal;
+    /*  */
+    @apply font-belle text-[56px] md:text-[80px] lg:text-[96px] leading-[normal] tracking-normal;
   }
   .heading-m {
     @apply font-belle text-2xl md:text-[40px] lg:text-[56px] tracking-normal;
@@ -22,10 +26,12 @@
     @apply font-barlow-condensed text-base/[normal] tracking-[0.15em] md:text-[28px] md:tracking-[4px];
   }
   .subheading-l {
-    @apply font-belle text-[28px] lg:tracking-normal;
+    /*  */
+    @apply font-belle text-[28px]/[normal] tracking-normal;
   }
   .subheading-s {
-    @apply font-barlow-condensed text-sm lg:tracking-[2px];
+    /*  */
+    @apply font-barlow-condensed text-sm/[normal] tracking-[2px];
   }
   .nav {
     /*  */
