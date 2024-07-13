@@ -27,19 +27,19 @@ const NavList = ({ navState, navStateHandler }) => {
             </li>
             <li className="border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 has-[.active]:border-white transition-colors">
               <NavLink to="destination" onClick={navStateHandler}>
-                <span className="nav-bold pr-3">00</span>
+                <span className="nav-bold pr-3">01</span>
                 <span className="nav">Destination</span>
               </NavLink>
             </li>
             <li className="border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 has-[.active]:border-white transition-colors">
               <NavLink to="crew" onClick={navStateHandler}>
-                <span className="nav-bold pr-3">00</span>
+                <span className="nav-bold pr-3">02</span>
                 <span className="nav">Crew</span>
               </NavLink>
             </li>
             <li className="border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 has-[.active]:border-white transition-colors">
               <NavLink to="technology" onClick={navStateHandler}>
-                <span className="nav-bold pr-3">00</span>
+                <span className="nav-bold pr-3">03</span>
                 <span className="nav">Technology</span>
               </NavLink>
             </li>
