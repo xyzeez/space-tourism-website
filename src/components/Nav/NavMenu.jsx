@@ -4,16 +4,17 @@ import useWindowWidth from '../../hooks/useWindowWidth';
 
 const NavMenu = () => {
   const [windowWidth] = useWindowWidth();
+  const isViewportLarge = windowWidth >= 768;
   const [isOpen, setIsOpen] = useState(false);
 
   const setNavState = () => {
-    if (windowWidth >= 768) return;
+    if (isViewportLarge) return;
     setIsOpen((isOpen) => !isOpen);
   };
 
   useEffect(() => {
-    windowWidth >= 768 && setIsOpen(true);
-  }, [windowWidth]);
+    setIsOpen(isViewportLarge);
+  }, [isViewportLarge]);
 
   return (
     <nav className="py-8 md:py-0">
