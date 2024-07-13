@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+
+// Components
 import Pagination from '../components/Pagination';
 
 // Variables
@@ -42,27 +45,49 @@ const Crew = () => {
         <span className="text-ashe mr-6">02</span>
         <span>Meet your crew</span>
       </h1>
-      <div className="flex flex-col xl:flex-row items-center xl:justify-between gap-y-[37px] md:gap-y-8 xl:gap-x-8 w-full">
-        <section className="flex flex-col items-center xl:items-start xl:self-end gap-y-20 md:gap-y-[54px] xl:gap-y-[237px] xl:mb-12">
-          <div className="text-center xl:text-left">
-            <h2 className="uppercase mb-6">
-              <span className="block heading-s text-ashe mb-2 md:mb-4">
-                {crewData[activeSlide].post}
-              </span>
-              <span className="heading-m">{crewData[activeSlide].name}</span>
-            </h2>
-            <p className="body text-blue max-w-[58ch] xl:max-w-[54ch]">
-              {crewData[activeSlide].brief}
-            </p>
-          </div>
-          <Pagination activeSlide={activeSlide} slideHandler={setActiveSlide} />
-        </section>
-        <img
-          src={crewData[activeSlide].img}
-          alt=""
-          className="w-full max-w-[271.27px] md:max-w-[446.74px] xl:md:max-w-[539.28px] h-auto mask md:-mb-[27px] xl:mb-0"
-        />
-      </div>
+      <AnimatePresence mode="wait">
+        <div className="flex flex-col xl:flex-row items-center xl:justify-between gap-y-[37px] md:gap-y-8 xl:gap-x-8 w-full">
+          <section className="flex flex-col items-center xl:items-start xl:self-end gap-y-20 md:gap-y-[54px] xl:gap-y-[237px] xl:mb-12">
+            <div className="text-center xl:text-left">
+              <motion.h2
+                key={crewData[activeSlide].post}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="uppercase mb-6">
+                <span className="block heading-s text-ashe mb-2 md:mb-4">
+                  {crewData[activeSlide].post}
+                </span>
+                <span className="heading-m">{crewData[activeSlide].name}</span>
+              </motion.h2>
+              <motion.p
+                key={crewData[activeSlide].brief}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="body text-blue max-w-[58ch] xl:max-w-[54ch]">
+                {crewData[activeSlide].brief}
+              </motion.p>
+            </div>
+            <Pagination
+              activeSlide={activeSlide}
+              slideHandler={setActiveSlide}
+            />
+          </section>
+          <motion.img
+            src={crewData[activeSlide].img}
+            alt=""
+            key={crewData[activeSlide].img}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-full max-w-[271.27px] md:max-w-[446.74px] xl:md:max-w-[539.28px] h-auto mask md:-mb-[27px] xl:mb-0"
+          />
+        </div>
+      </AnimatePresence>
     </main>
   );
 };
