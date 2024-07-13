@@ -61,4 +61,7 @@
   .bg-technology {
     @apply bg-[url('/assets/technology/background-technology-mobile.jpg')] md:bg-[url('/assets/technology/background-technology-tablet.jpg')] lg:bg-[url('/assets/technology/background-technology-desktop.jpg')];
   }
+  .mask {
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
 }
