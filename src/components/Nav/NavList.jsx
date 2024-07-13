@@ -6,7 +6,7 @@ const NavList = ({ navState, navStateHandler }) => {
     <AnimatePresence>
       {navState && (
         <motion.div
-          className="absolute md:relative top-0 right-0 flex flex-col gap-y-20 w-full max-w-64 md:max-w-full h-screen md:h-auto pt-8 md:pt-0 md:pr-10 pl-8 md:pl-28 bg-navy/15 md:bg-white/5 backdrop-blur-[80px] xl:before:absolute xl:before:w-[min(100%,560px)] xl:before:h-[1px] xl:before:top-[calc(50%-0.5px)] xl:before:-left-[80%] xl:before:bg-white"
+          className="absolute md:relative top-0 md:top-auto right-0 md:right-auto flex flex-col gap-y-20 w-full max-w-64 md:max-w-full h-screen md:h-auto pt-8 md:pt-0 md:pr-10 pl-8 md:pl-28 bg-navy/15 md:bg-white/5 backdrop-blur-[80px] xl:before:absolute xl:before:w-[min(100%,560px)] xl:before:h-[1px] xl:before:top-[calc(50%-0.5px)] xl:before:-left-[80%] xl:before:bg-white"
           initial={{ x: '100%' }}
           animate={{ x: 1 }}
           exit={{ x: '100%' }}
