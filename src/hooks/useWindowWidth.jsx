@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import { getWindowWidth } from '../helpers';
+import { debouce, getWindowWidth } from '../helpers';
 
 const useWindowWidth = () => {
   const [windowWidth, setWindowWidth] = useState(getWindowWidth());
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = debouce(() => {
       setWindowWidth(getWindowWidth());
-    };
+    });
 
     window.addEventListener('resize', handleResize);
 
