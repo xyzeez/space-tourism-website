@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 const Tabs = () => {
   return (
-    <div className="flex flex-row gap-8 *:pb-[15px] *:nav *:uppercase *:text-blue *:border-b-4 *:border-transparent w-fit">
+    <div className="flex flex-row gap-8 *:pb-[15px] *:nav *:uppercase *:text-blue *:border-b-4 *:border-transparent *:transition-colors w-fit">
       <NavLink
         to="/destination/moon"
         className="[&.active]:text-white [&.active]:border-white">
