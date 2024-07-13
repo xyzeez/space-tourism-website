@@ -15,7 +15,8 @@
     @apply font-belle text-[56px] md:text-[80px] lg:text-[96px] leading-[normal] tracking-normal;
   }
   .heading-m {
-    @apply font-belle text-2xl md:text-[40px] lg:text-[56px] tracking-normal;
+    /*  */
+    @apply font-belle text-2xl/[normal] md:text-[40px] lg:text-[56px] tracking-normal;
   }
   .heading-s {
     /*  */
