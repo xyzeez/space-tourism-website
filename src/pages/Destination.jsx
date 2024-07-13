@@ -1,4 +1,7 @@
 import { useParams } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+
+// Components
 import Tabs from '../components/Tabs';
 
 // Variables
@@ -42,36 +45,73 @@ const Destination = () => {
         <span className="text-ashe mr-6">01</span>
         <span>Pick your destination</span>
       </h1>
-      <div className="flex flex-col xl:flex-row items-center 2xl:justify-between gap-y-[58.5px] md:gap-y-[85.5px] xl:gap-x-[108.5px] w-full">
-        <img
-          src={destinations[tab].img}
-          alt=""
-          className="w-full max-w-[150px] md:max-w-[300px] xl:max-w-[480px] aspect-square xl:mx-[29.5px]"
-        />
-        <section className="flex flex-col items-center xl:items-start text-center xl:text-left max-w-[514px] xl:max-w-[445px]">
-          <Tabs />
-          <div className="pb-6 xl:pb-10 my-6 xl:my-10 border-b border-b-ashe">
-            <h2 className="heading-l uppercase mb-4">
-              {destinations[tab].title}
-            </h2>
-            <p className="body text-blue">{destinations[tab].desc}</p>
-          </div>
-          <div className="flex flex-col items-center xl:justify-start justify-center md:flex-row gap-6 md:gap-[117px] xl:gap-[91.5px]">
-            <p className="uppercase">
-              <span className="block subheading-s text-blue mb-3">
-                <abbr title="Average">Avg.</abbr> Distance
-              </span>
-              <span className="subheading-l">{destinations[tab].avgDist}</span>
-            </p>
-            <p className="uppercase">
-              <span className="block subheading-s text-blue mb-3">
-                <abbr title="Estimated">Est.</abbr> Travel Time
-              </span>
-              <span className="subheading-l">{destinations[tab].estTime}</span>
-            </p>
-          </div>
-        </section>
-      </div>
+      <AnimatePresence>
+        <div className="flex flex-col xl:flex-row items-center 2xl:justify-between gap-y-[58.5px] md:gap-y-[85.5px] xl:gap-x-[108.5px] w-full">
+          <motion.img
+            src={destinations[tab].img}
+            alt=""
+            key={destinations[tab].img}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-full max-w-[150px] md:max-w-[300px] xl:max-w-[480px] aspect-square xl:mx-[29.5px]"
+          />
+          <section className="flex flex-col items-center xl:items-start text-center xl:text-left max-w-[514px] xl:max-w-[445px]">
+            <Tabs />
+            <div className="pb-6 xl:pb-10 my-6 xl:my-10 border-b border-b-ashe">
+              <motion.h2
+                key={destinations[tab].title}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="heading-l uppercase mb-4">
+                {destinations[tab].title}
+              </motion.h2>
+              <motion.p
+                key={destinations[tab].desc}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="body text-blue">
+                {destinations[tab].desc}
+              </motion.p>
+            </div>
+            <div className="flex flex-col items-center xl:justify-start justify-center md:flex-row gap-6 md:gap-[117px] xl:gap-[91.5px]">
+              <motion.p
+                key={destinations[tab].avgDist}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="uppercase">
+                <span className="block subheading-s text-blue mb-3">
+                  <abbr title="Average">Avg.</abbr> Distance
+                </span>
+                <span className="subheading-l">
+                  {destinations[tab].avgDist}
+                </span>
+              </motion.p>
+              <motion.p
+                key={destinations[tab].estTime}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="uppercase">
+                <span className="block subheading-s text-blue mb-3">
+                  <abbr title="Estimated">Est.</abbr> Travel Time
+                </span>
+                <span className="subheading-l">
+                  {destinations[tab].estTime}
+                </span>
+              </motion.p>
+            </div>
+          </section>
+        </div>
+      </AnimatePresence>
     </main>
   );
 };
