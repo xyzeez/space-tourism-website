@@ -7,7 +7,7 @@ const Logo = () => {
         <img
           src="/assets/shared/logo.svg"
           alt=""
-          className="size-10 md:size-12"
+          className="size-10 md:size-12 max-w-10 md:max-w-12"
         />
       </Link>
     </div>
