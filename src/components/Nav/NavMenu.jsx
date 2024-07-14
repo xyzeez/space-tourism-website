@@ -12,7 +12,7 @@ const NavMenu = () => {
   };
 
   return (
-    <nav className="py-8 md:py-0">
+    <nav className="py-8 md:py-0 md:w-full ml-auto overflow-hidden">
       <button className="md:hidden" onClick={setNavState}>
         <img
           src="/assets/shared/icon-hamburger.svg"
