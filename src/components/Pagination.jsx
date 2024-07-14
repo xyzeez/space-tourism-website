@@ -1,31 +1,79 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
 
-const Pagination = ({ activeSlide, slideHandler }) => {
+const Dots = ({ activeSlide, slideHandler }) => {
   const dotStyles = 'absolute top-0 size-full bg-white rounded-full';
 
   return (
-    <div className="flex flex-row gap-4 xl:gap-10 w-fit">
-      <Button type="pagination-s" clickHandler={() => slideHandler(0)}>
-        {activeSlide === 0 ? (
-          <motion.div layoutId="pagination" className={dotStyles} />
-        ) : null}
+    <>
+      <Button type="pagination-dots" clickHandler={() => slideHandler(0)}>
+        {activeSlide === 0 && (
+          <motion.div layoutId="pagination-dots" className={dotStyles} />
+        )}
       </Button>
-      <Button type="pagination-s" clickHandler={() => slideHandler(1)}>
-        {activeSlide === 1 ? (
-          <motion.div layoutId="pagination" className={dotStyles} />
-        ) : null}
+      <Button type="pagination-dots" clickHandler={() => slideHandler(1)}>
+        {activeSlide === 1 && (
+          <motion.div layoutId="pagination-dots" className={dotStyles} />
+        )}
       </Button>
-      <Button type="pagination-s" clickHandler={() => slideHandler(2)}>
-        {activeSlide === 2 ? (
-          <motion.div layoutId="pagination" className={dotStyles} />
-        ) : null}
+      <Button type="pagination-dots" clickHandler={() => slideHandler(2)}>
+        {activeSlide === 2 && (
+          <motion.div layoutId="pagination-dots" className={dotStyles} />
+        )}
       </Button>
-      <Button type="pagination-s" clickHandler={() => slideHandler(3)}>
-        {activeSlide === 3 ? (
-          <motion.div layoutId="pagination" className={dotStyles} />
-        ) : null}
+      <Button type="pagination-dots" clickHandler={() => slideHandler(3)}>
+        {activeSlide === 3 && (
+          <motion.div layoutId="pagination-dots" className={dotStyles} />
+        )}
       </Button>
+    </>
+  );
+};
+
+const Numbers = ({ activeSlide, slideHandler }) => {
+  const dotStyles = 'absolute top-0 size-full bg-white rounded-full z-10';
+
+  return (
+    <>
+      <Button type="pagination-numbers" clickHandler={() => slideHandler(0)}>
+        <span className={`relative z-20 ${activeSlide === 0 && 'text-navy'}`}>
+          1
+        </span>
+        {activeSlide === 0 && (
+          <motion.div layoutId="pagination-numbers" className={dotStyles} />
+        )}
+      </Button>
+      <Button type="pagination-numbers" clickHandler={() => slideHandler(1)}>
+        <span className={`relative z-20 ${activeSlide === 1 && 'text-navy'}`}>
+          2
+        </span>
+        {activeSlide === 1 && (
+          <motion.div layoutId="pagination-numbers" className={dotStyles} />
+        )}
+      </Button>
+      <Button type="pagination-numbers" clickHandler={() => slideHandler(2)}>
+        <span className={`relative z-20 ${activeSlide === 2 && 'text-navy'}`}>
+          3
+        </span>
+        {activeSlide === 2 && (
+          <motion.div layoutId="pagination-numbers" className={dotStyles} />
+        )}
+      </Button>
+    </>
+  );
+};
+
+const Pagination = ({ orientationStyles, type, activeSlide, slideHandler }) => {
+  return (
+    <div
+      className={`flex gap-4 w-fit ${orientationStyles}
+        ${type === 'dots' && 'xl:gap-10'} ${type === 'numbers' && 'xl:gap-8'}`}>
+      {type === 'dots' && (
+        <Dots activeSlide={activeSlide} slideHandler={slideHandler} />
+      )}
+      {type === 'numbers' && (
+        <Numbers activeSlide={activeSlide} slideHandler={slideHandler} />
+      )}
     </div>
   );
 };

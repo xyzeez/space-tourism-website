@@ -72,6 +72,8 @@ const Crew = () => {
               </motion.p>
             </div>
             <Pagination
+              type="dots"
+              orientationStyles="flex-row"
               activeSlide={activeSlide}
               slideHandler={setActiveSlide}
             />
