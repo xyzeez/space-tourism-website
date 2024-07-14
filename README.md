@@ -13,11 +13,11 @@
   <!--  -->
   <p align="center">
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://femc-spacetourismwebsite.netlify.app/">View Demo</a>
     ·
-    <a href="#" target="_blank">Report Bug</a>
+    <a href="https://github.com/xyzeez/space-tourism-website/issues" target="_blank">Report Bug</a>
     ·
-    <a href="#" target="_blank">Request Feature</a>
+    <a href="https://github.com/xyzeez/space-tourism-website/issues" target="_blank">Request Feature</a>
   </p>
   <!--  -->
   <div align="center">
@@ -30,14 +30,9 @@
     <!-- Status -->
     <a href="#">
       <img
-        src="https://img.shields.io/badge/Status-In Development-0074D9?style=for-the-badge"
-        alt="Status In Development" />
-    </a>
-    <!-- <a href="#">
-      <img
         src="https://img.shields.io/badge/Status-Completed-2ECC40?style=for-the-badge"
         alt="Status Completed" />
-    </a> -->
+    </a>
     <!-- <a href="#">
       <img
         src="https://img.shields.io/badge/Status-Debugging-FFFF00?style=for-the-badge"
@@ -74,21 +69,22 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - View each page and be able to toggle between the tabs to see new information
 
-<!-- ### Links
+### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [URL here](https://www.frontendmentor.io/solutions/space-tourism-website-react-js-tailwind-css-framer-motion-nC9Qpc4GO5)
+- Live Site URL: [URL here](https://femc-spacetourismwebsite.netlify.app/)
 
 ## My process
 
 ### Built with
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) &nbsp;
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) &nbsp; ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) &nbsp; ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) &nbsp; ![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue) &nbsp;
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept. -->
+- [Why you should use window.matchMedia when checking for window resizes in Javascript](https://webdevetc.com/blog/matchmedia-events-for-window-resizes/)
+- [Window: matchMedia() method](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
+- [Framer Motion](https://www.framer.com/motion/)
 
 ## Author
 
