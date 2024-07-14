@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Logo = () => {
   return (
     <div className="w-fit">
-      <Link to="/">
+      <Link to="/" aria-label="home">
         <img
           src="/assets/shared/logo.svg"
           alt=""
