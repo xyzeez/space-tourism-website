@@ -1,7 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const NavList = ({ relativeStyles, navState, navStateHandler }) => {
+  const { pathname } = useLocation();
+  const mainPath = pathname.split('/')[1] || 'home';
+
   return (
     <AnimatePresence>
       {navState && (
@@ -19,29 +22,53 @@ const NavList = ({ relativeStyles, navState, navStateHandler }) => {
             />
           </button>
           <menu className="flex flex-col md:flex-row gap-y-8 gap-x-12">
-            <li className="border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 has-[.active]:border-white transition-colors">
+            <li className="relative border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 transition-colors">
               <NavLink to="home" onClick={navStateHandler}>
                 <span className="nav-bold pr-3">00</span>
                 <span className="nav">Home</span>
               </NavLink>
+              {mainPath === 'home' && (
+                <motion.span
+                  layoutId="navlinks"
+                  className="absolute w-1 md:w-auto top-0 md:top-auto bottom-0 -right-[1px]  md:left-0 md:right-0 md:h-1 md:-bottom-1 bg-white"
+                />
+              )}
             </li>
-            <li className="border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 has-[.active]:border-white transition-colors">
+            <li className="relative border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 transition-colors">
               <NavLink to="destination" onClick={navStateHandler}>
-                <span className="nav-bold pr-3">01</span>
+                <span className="nav-bold pr-3">00</span>
                 <span className="nav">Destination</span>
               </NavLink>
+              {mainPath === 'destination' && (
+                <motion.span
+                  layoutId="navlinks"
+                  className="absolute w-1 md:w-auto top-0 md:top-auto bottom-0 -right-[1px]  md:left-0 md:right-0 md:h-1 md:-bottom-1 bg-white"
+                />
+              )}
             </li>
-            <li className="border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 has-[.active]:border-white transition-colors">
+            <li className="relative border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 transition-colors">
               <NavLink to="crew" onClick={navStateHandler}>
-                <span className="nav-bold pr-3">02</span>
+                <span className="nav-bold pr-3">00</span>
                 <span className="nav">Crew</span>
               </NavLink>
+              {mainPath === 'crew' && (
+                <motion.span
+                  layoutId="navlinks"
+                  className="absolute w-1 md:w-auto top-0 md:top-auto bottom-0 -right-[1px]  md:left-0 md:right-0 md:h-1 md:-bottom-1 bg-white"
+                />
+              )}
             </li>
-            <li className="border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 has-[.active]:border-white transition-colors">
+            <li className="relative border-r-4 md:border-r-0 md:border-b-4 md:py-[38.5px] border-transparent has-[:hover]:border-white/50 transition-colors">
               <NavLink to="technology" onClick={navStateHandler}>
-                <span className="nav-bold pr-3">03</span>
+                <span className="nav-bold pr-3">00</span>
                 <span className="nav">Technology</span>
               </NavLink>
+              {mainPath === 'technology' && (
+                <motion.span
+                  layoutId="navlinks"
+                  className="absolute w-1 md:w-auto top-0 md:top-auto bottom-0 -right-[1px]  md:left-0 md:right-0 md:h-1 md:-bottom-1 bg-white"
+                />
+              )}
             </li>
           </menu>
         </motion.div>
