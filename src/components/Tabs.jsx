@@ -13,7 +13,7 @@ const Tabs = () => {
         {tab === 'moon' ? (
           <motion.span
             layoutId="tabs"
-            className="absolute -bottom-[1px] left-0 right-0 h-1 bg-white"></motion.span>
+            className="absolute -bottom-1 left-0 right-0 h-1 bg-white"></motion.span>
         ) : null}
       </NavLink>
       <NavLink
@@ -23,7 +23,7 @@ const Tabs = () => {
         {tab === 'mars' ? (
           <motion.span
             layoutId="tabs"
-            className="absolute -bottom-[1px] left-0 right-0 h-1 bg-white"></motion.span>
+            className="absolute -bottom-1 left-0 right-0 h-1 bg-white"></motion.span>
         ) : null}
       </NavLink>
       <NavLink
@@ -33,7 +33,7 @@ const Tabs = () => {
         {tab === 'europa' ? (
           <motion.span
             layoutId="tabs"
-            className="absolute -bottom-[1px] left-0 right-0 h-1 bg-white"></motion.span>
+            className="absolute -bottom-1 left-0 right-0 h-1 bg-white"></motion.span>
         ) : null}
       </NavLink>
       <NavLink
@@ -43,7 +43,7 @@ const Tabs = () => {
         {tab === 'titan' ? (
           <motion.span
             layoutId="tabs"
-            className="absolute -bottom-[1px] left-0 right-0 h-1 bg-white"></motion.span>
+            className="absolute -bottom-1 left-0 right-0 h-1 bg-white"></motion.span>
         ) : null}
       </NavLink>
     </div>
