@@ -46,9 +46,9 @@ const Crew = () => {
         <span>Meet your crew</span>
       </h1>
       <AnimatePresence mode="wait">
-        <div className="flex flex-col xl:flex-row items-center xl:justify-between gap-y-[37px] md:gap-y-8 xl:gap-x-8 w-full">
-          <section className="flex flex-col items-center xl:items-start xl:self-end gap-y-20 md:gap-y-[54px] xl:gap-y-[237px] xl:mb-12">
-            <div className="text-center xl:text-left">
+        <div className="grid grid-cols-1 grid-rows-[auto_auto] xl:grid-cols-2 xl:grid-rows-1 items-center xl:items-end xl:justify-between gap-y-[37px] md:gap-y-8 xl:gap-y-0 xl:gap-x-8 w-full xl:h-[734px]">
+          <section className="flex flex-col items-center xl:items-start gap-y-6 md:gap-y-10 xl:self-start h-full xl:h-[calc(100%-48px)]">
+            <div className="flex flex-col xl:justify-center text-center xl:text-left h-56 md:h-[231px] xl:h-full">
               <motion.h2
                 key={crewData[activeSlide].post}
                 initial={{ opacity: 0 }}
@@ -84,7 +84,7 @@ const Crew = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full max-w-[271.27px] md:max-w-[446.74px] xl:md:max-w-[539.28px] h-auto mask md:-mb-[27px] xl:mb-0"
+            className="w-full max-w-[271.27px] md:max-w-[446.74px] xl:md:max-w-[539.28px] h-auto mask mx-auto md:-mb-[27px] xl:my-[27px]"
           />
         </div>
       </AnimatePresence>
