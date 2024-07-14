@@ -7,8 +7,11 @@ import {
 // Pages
 import Home from './pages/Home';
 import Destination from './pages/Destination';
+import { loader as destinationLoader } from './pages/Destination';
 import Crew from './pages/Crew';
+import { loader as crewLoader } from './pages/Crew';
 import Technology from './pages/Technology';
+import { loader as technologyLoader } from './pages/Technology';
 import PageNotFound from './pages/PageNotFound';
 
 // Components
@@ -35,14 +38,17 @@ const router = createBrowserRouter([
       {
         path: 'destination/:tab',
         element: <Destination />,
+        loader: destinationLoader,
       },
       {
         path: 'crew',
         element: <Crew />,
+        loader: crewLoader,
       },
       {
         path: 'technology',
         element: <Technology />,
+        loader: technologyLoader,
       },
       {
         path: '*',
