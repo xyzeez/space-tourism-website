@@ -2,9 +2,9 @@ import NavBar from './Nav/NavBar';
 
 const AppLayout = ({ children }) => {
   return (
-    <div className="relative grid grid-cols-1 grid-rows-1 bg-navy text-white">
-      <NavBar />
-      <div className="*:min-h-screen *:bg-no-repeat *:bg-cover *:bg-center *:bg-fixed">
+    <div className="relative grid grid-cols-1 grid-rows-[auto_1fr] items-start bg-navy text-white">
+      <NavBar relativeStyles="col-start-1 col-end-2 row-start-1 row-end-2 xl:mt-10" />
+      <div className="col-start-1 col-end-2 row-start-1 row-end-3 *:min-h-screen *:bg-no-repeat *:bg-cover *:bg-center *:bg-fixed">
         {children}
       </div>
     </div>

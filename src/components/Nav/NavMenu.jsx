@@ -20,7 +20,11 @@ const NavMenu = () => {
           className="w-6 h-[21px]"
         />
       </button>
-      <NavList navState={inViewport || isOpen} navStateHandler={setNavState} />
+      <NavList
+        relativeStyles="fixed md:relative top-0 md:top-auto right-0 md:right-auto"
+        navState={inViewport || isOpen}
+        navStateHandler={setNavState}
+      />
     </nav>
   );
 };
