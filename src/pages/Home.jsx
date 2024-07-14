@@ -19,7 +19,7 @@ const Home = () => {
         </p>
       </div>
       <div className="grid place-content-center xl:place-content-end w-full h-96 md:w-[512px] md:h-fit xl:w-[540px]">
-        <Button clickHandler={() => navigate('destination')}>Explore</Button>
+        <Button clickHandler={() => navigate('/destination')}>Explore</Button>
       </div>
     </main>
   );

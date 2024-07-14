@@ -17,7 +17,7 @@ const App = () => {
         <Routes>
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
-          <Route path="destination" element={<Navigate replace to="moon" />} />
+          <Route path="destination" element={<Navigate to="moon" />} />
           <Route path="destination/:tab" element={<Destination />} />
           <Route path="crew" element={<Crew />} />
           <Route path="technology" element={<Technology />} />
