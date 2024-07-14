@@ -1,20 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import NavList from './NavList';
-import useWindowWidth from '../../hooks/useWindowWidth';
+import useViewport from '../../hooks/useViewport';
 
 const NavMenu = () => {
-  const [windowWidth] = useWindowWidth();
-  const isViewportLarge = windowWidth >= 768;
+  const [inViewport] = useViewport('768px');
   const [isOpen, setIsOpen] = useState(false);
 
   const setNavState = () => {
-    if (isViewportLarge) return;
+    if (inViewport) return;
     setIsOpen((isOpen) => !isOpen);
   };
-
-  useEffect(() => {
-    setIsOpen(isViewportLarge);
-  }, [isViewportLarge]);
 
   return (
     <nav className="py-8 md:py-0">
@@ -25,7 +20,7 @@ const NavMenu = () => {
           className="w-6 h-[21px]"
         />
       </button>
-      <NavList navState={isOpen} navStateHandler={setNavState} />
+      <NavList navState={inViewport || isOpen} navStateHandler={setNavState} />
     </nav>
   );
 };
