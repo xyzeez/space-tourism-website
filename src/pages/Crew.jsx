@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLoaderData } from 'react-router-dom';
 
@@ -17,6 +17,14 @@ export const loader = async () => {
 const Crew = () => {
   const crews = useLoaderData();
   const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const autoSwipeSlides = setInterval(() => {
+      setActiveSlide((prevSlide) => (prevSlide === 3 ? 0 : ++prevSlide));
+    }, 6000);
+
+    return () => clearInterval(autoSwipeSlides);
+  }, [activeSlide]);
 
   return (
     <main className="flex flex-col items-center md:items-start gap-y-16 xl:gap-y-[53px] bg-crew p-6 pt-28 md:p-10 md:pt-[136px] xl:py-12 xl:pt-[184px] xl:px-[165px]">
