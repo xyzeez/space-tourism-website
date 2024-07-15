@@ -1,78 +1,83 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
 
-const Dots = ({ activeSlide, slideHandler }) => {
+const Dots = ({ numOfDots, activeSlide, slideHandler }) => {
   const dotStyles = 'absolute top-0 size-full bg-white rounded-full';
 
-  return (
-    <>
-      <Button type="pagination-dots" clickHandler={() => slideHandler(1)}>
-        {activeSlide === 1 && (
+  const dots = Array.from({ length: numOfDots }, (_, i) => i + 1).map(
+    (slideIndex) => (
+      <Button
+        key={slideIndex}
+        type="pagination-dots"
+        clickHandler={() => slideHandler(slideIndex)}
+        style={
+          activeSlide === slideIndex
+            ? { ...dotStyles, opacity: 1 }
+            : { ...dotStyles, opacity: 0.5 }
+        }>
+        {activeSlide === slideIndex && (
           <motion.div layoutId="pagination-dots" className={dotStyles} />
         )}
       </Button>
-      <Button type="pagination-dots" clickHandler={() => slideHandler(2)}>
-        {activeSlide === 2 && (
-          <motion.div layoutId="pagination-dots" className={dotStyles} />
-        )}
-      </Button>
-      <Button type="pagination-dots" clickHandler={() => slideHandler(3)}>
-        {activeSlide === 3 && (
-          <motion.div layoutId="pagination-dots" className={dotStyles} />
-        )}
-      </Button>
-      <Button type="pagination-dots" clickHandler={() => slideHandler(4)}>
-        {activeSlide === 4 && (
-          <motion.div layoutId="pagination-dots" className={dotStyles} />
-        )}
-      </Button>
-    </>
+    )
   );
+
+  return <>{dots}</>;
 };
 
-const Numbers = ({ activeSlide, slideHandler }) => {
+const Numbers = ({ numOfDots, activeSlide, slideHandler }) => {
   const dotStyles = 'absolute top-0 size-full bg-white rounded-full z-10';
 
-  return (
-    <>
-      <Button type="pagination-numbers" clickHandler={() => slideHandler(1)}>
-        <span className={`relative z-20 ${activeSlide === 1 && 'text-navy'}`}>
-          1
+  const buttons = Array.from({ length: numOfDots }, (_, i) => i + 1).map(
+    (slideIndex) => (
+      <Button
+        key={slideIndex}
+        type="pagination-numbers"
+        clickHandler={() => slideHandler(slideIndex)}>
+        <span
+          className={`relative z-20 text-gray-500 ${
+            activeSlide === slideIndex ? 'text-navy' : ''
+          }`}>
+          {slideIndex}
         </span>
-        {activeSlide === 1 && (
+        {activeSlide === slideIndex && (
           <motion.div layoutId="pagination-numbers" className={dotStyles} />
         )}
       </Button>
-      <Button type="pagination-numbers" clickHandler={() => slideHandler(2)}>
-        <span className={`relative z-20 ${activeSlide === 2 && 'text-navy'}`}>
-          2
-        </span>
-        {activeSlide === 2 && (
-          <motion.div layoutId="pagination-numbers" className={dotStyles} />
-        )}
-      </Button>
-      <Button type="pagination-numbers" clickHandler={() => slideHandler(3)}>
-        <span className={`relative z-20 ${activeSlide === 3 && 'text-navy'}`}>
-          3
-        </span>
-        {activeSlide === 3 && (
-          <motion.div layoutId="pagination-numbers" className={dotStyles} />
-        )}
-      </Button>
-    </>
+    )
   );
+
+  return <>{buttons}</>;
 };
 
-const Pagination = ({ orientationStyles, type, activeSlide, slideHandler }) => {
+const Pagination = ({
+  orientationStyles,
+  type,
+  numOfSlides = 1,
+  activeSlide,
+  slideHandler,
+}) => {
+  const spacingStyles = {
+    dots: 'xl:gap-10',
+    numbers: 'xl:gap-8',
+  };
+
   return (
     <div
-      className={`flex gap-4 w-fit ${orientationStyles}
-        ${type === 'dots' && 'xl:gap-10'} ${type === 'numbers' && 'xl:gap-8'}`}>
+      className={`flex gap-4 w-fit ${orientationStyles} ${spacingStyles[type]}`}>
       {type === 'dots' && (
-        <Dots activeSlide={activeSlide} slideHandler={slideHandler} />
+        <Dots
+          numOfDots={numOfSlides}
+          activeSlide={activeSlide}
+          slideHandler={slideHandler}
+        />
       )}
       {type === 'numbers' && (
-        <Numbers activeSlide={activeSlide} slideHandler={slideHandler} />
+        <Numbers
+          numOfDots={numOfSlides}
+          activeSlide={activeSlide}
+          slideHandler={slideHandler}
+        />
       )}
     </div>
   );

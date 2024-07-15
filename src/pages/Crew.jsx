@@ -54,6 +54,7 @@ const Crew = () => {
             <Pagination
               type="dots"
               orientationStyles="flex-row"
+              numOfSlides={4}
               activeSlide={activeSlide}
               slideHandler={setActiveSlide}
             />

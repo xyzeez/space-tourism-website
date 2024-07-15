@@ -72,6 +72,7 @@ const Technology = () => {
             <Pagination
               type="numbers"
               orientationStyles="flex-row xl:flex-col"
+              numOfSlides={3}
               activeSlide={activeSlide}
               slideHandler={setActiveSlide}
             />
