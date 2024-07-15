@@ -16,7 +16,7 @@ export const loader = async () => {
 
 const Crew = () => {
   const crews = useLoaderData();
-  const [activeSlide, setActiveSlide] = useSwiper(4, 6);
+  const [activeSlide, setActiveSlide] = useSwiper(4);
   const dataIndex = activeSlide - 1;
 
   return (

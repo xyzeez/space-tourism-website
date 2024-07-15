@@ -35,17 +35,9 @@ const Numbers = ({ activeSlide, slideHandler }) => {
 
   return (
     <>
-      <Button type="pagination-numbers" clickHandler={() => slideHandler(0)}>
-        <span className={`relative z-20 ${activeSlide === 0 && 'text-navy'}`}>
-          1
-        </span>
-        {activeSlide === 0 && (
-          <motion.div layoutId="pagination-numbers" className={dotStyles} />
-        )}
-      </Button>
       <Button type="pagination-numbers" clickHandler={() => slideHandler(1)}>
         <span className={`relative z-20 ${activeSlide === 1 && 'text-navy'}`}>
-          2
+          1
         </span>
         {activeSlide === 1 && (
           <motion.div layoutId="pagination-numbers" className={dotStyles} />
@@ -53,9 +45,17 @@ const Numbers = ({ activeSlide, slideHandler }) => {
       </Button>
       <Button type="pagination-numbers" clickHandler={() => slideHandler(2)}>
         <span className={`relative z-20 ${activeSlide === 2 && 'text-navy'}`}>
-          3
+          2
         </span>
         {activeSlide === 2 && (
+          <motion.div layoutId="pagination-numbers" className={dotStyles} />
+        )}
+      </Button>
+      <Button type="pagination-numbers" clickHandler={() => slideHandler(3)}>
+        <span className={`relative z-20 ${activeSlide === 3 && 'text-navy'}`}>
+          3
+        </span>
+        {activeSlide === 3 && (
           <motion.div layoutId="pagination-numbers" className={dotStyles} />
         )}
       </Button>

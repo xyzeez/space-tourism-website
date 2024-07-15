@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLoaderData } from 'react-router-dom';
 
@@ -7,6 +6,7 @@ import Pagination from '../components/Pagination';
 
 // Helpers
 import { getAppData } from '../helpers';
+import useSwiper from '../hooks/useSwiper';
 
 // Loader
 export const loader = async () => {
@@ -16,7 +16,8 @@ export const loader = async () => {
 
 const Technology = () => {
   const technologies = useLoaderData();
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useSwiper(3);
+  const dataIndex = activeSlide - 1;
 
   return (
     <main className="flex flex-col gap-y-[88px] items-center md:items-start pt-28 px-0 pb-12 md:pt-[136px] md:pb-10 xl:pt-[184px] xl:pl-[165px] xl:pb-12 bg-technology overflow-x-hidden">
@@ -29,15 +30,15 @@ const Technology = () => {
           <picture>
             <source
               media="(min-width: 1280px)"
-              srcSet={technologies[activeSlide].images.portrait}
+              srcSet={technologies[dataIndex].images.portrait}
             />
             <motion.img
-              key={technologies[activeSlide].images.landscape}
+              key={technologies[dataIndex].images.landscape}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              src={technologies[activeSlide].images.landscape}
+              src={technologies[dataIndex].images.landscape}
               alt=""
               className="w-full max-w-screen-md xl:max-w-auto h-[258px] xl:h-[600px] object-cover object-center mx-auto xl:mx-0"
             />
@@ -49,23 +50,23 @@ const Technology = () => {
                   The terminology...
                 </span>
                 <motion.span
-                  key={technologies[activeSlide].name}
+                  key={technologies[dataIndex].name}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                   className="heading-m">
-                  {technologies[activeSlide].name}
+                  {technologies[dataIndex].name}
                 </motion.span>
               </h1>
               <motion.p
-                key={technologies[activeSlide].description}
+                key={technologies[dataIndex].description}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 className="body text-blue max-w-[56ch] xl:w-[48.5ch] xl:max-w-auto">
-                {technologies[activeSlide].description}
+                {technologies[dataIndex].description}
               </motion.p>
             </div>
             <Pagination

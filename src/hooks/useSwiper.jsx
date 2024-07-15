@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useSwiper(numOfSlides, swipeDelaySecs, initialSlide = 1) {
+function useSwiper(numOfSlides = 1, swipeDelaySecs = 6, initialSlide = 1) {
   const [activeSlide, setActiveSlide] = useState(initialSlide);
 
   useEffect(() => {
