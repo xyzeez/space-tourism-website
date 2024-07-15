@@ -6,11 +6,6 @@ const Dots = ({ activeSlide, slideHandler }) => {
 
   return (
     <>
-      <Button type="pagination-dots" clickHandler={() => slideHandler(0)}>
-        {activeSlide === 0 && (
-          <motion.div layoutId="pagination-dots" className={dotStyles} />
-        )}
-      </Button>
       <Button type="pagination-dots" clickHandler={() => slideHandler(1)}>
         {activeSlide === 1 && (
           <motion.div layoutId="pagination-dots" className={dotStyles} />
@@ -23,6 +18,11 @@ const Dots = ({ activeSlide, slideHandler }) => {
       </Button>
       <Button type="pagination-dots" clickHandler={() => slideHandler(3)}>
         {activeSlide === 3 && (
+          <motion.div layoutId="pagination-dots" className={dotStyles} />
+        )}
+      </Button>
+      <Button type="pagination-dots" clickHandler={() => slideHandler(4)}>
+        {activeSlide === 4 && (
           <motion.div layoutId="pagination-dots" className={dotStyles} />
         )}
       </Button>

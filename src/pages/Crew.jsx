@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLoaderData } from 'react-router-dom';
 
@@ -7,6 +6,7 @@ import Pagination from '../components/Pagination';
 
 // Helpers
 import { getAppData } from '../helpers';
+import useSwiper from '../hooks/useSwiper';
 
 // Loader
 export const loader = async () => {
@@ -16,15 +16,8 @@ export const loader = async () => {
 
 const Crew = () => {
   const crews = useLoaderData();
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const autoSwipeSlides = setInterval(() => {
-      setActiveSlide((prevSlide) => (prevSlide === 3 ? 0 : ++prevSlide));
-    }, 6000);
-
-    return () => clearInterval(autoSwipeSlides);
-  }, [activeSlide]);
+  const [activeSlide, setActiveSlide] = useSwiper(4, 6);
+  const dataIndex = activeSlide - 1;
 
   return (
     <main className="flex flex-col items-center md:items-start gap-y-16 xl:gap-y-[53px] bg-crew p-6 pt-28 md:p-10 md:pt-[136px] xl:py-12 xl:pt-[184px] xl:px-[165px]">
@@ -37,25 +30,25 @@ const Crew = () => {
           <section className="flex flex-col items-center xl:items-start gap-y-6 md:gap-y-10 xl:self-start h-full xl:h-[calc(100%-48px)]">
             <div className="flex flex-col xl:justify-center text-center xl:text-left h-56 md:h-[231px] xl:h-full">
               <motion.h2
-                key={crews[activeSlide].role}
+                key={crews[dataIndex].role}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 className="uppercase mb-6">
                 <span className="block heading-s text-ashe mb-2 md:mb-4">
-                  {crews[activeSlide].role}
+                  {crews[dataIndex].role}
                 </span>
-                <span className="heading-m">{crews[activeSlide].name}</span>
+                <span className="heading-m">{crews[dataIndex].name}</span>
               </motion.h2>
               <motion.p
-                key={crews[activeSlide].bio}
+                key={crews[dataIndex].bio}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 className="body text-blue max-w-[58ch] xl:max-w-[54ch]">
-                {crews[activeSlide].bio}
+                {crews[dataIndex].bio}
               </motion.p>
             </div>
             <Pagination
@@ -66,9 +59,9 @@ const Crew = () => {
             />
           </section>
           <motion.img
-            src={crews[activeSlide].images.png}
+            src={crews[dataIndex].images.png}
             alt=""
-            key={crews[activeSlide].images.png}
+            key={crews[dataIndex].images.png}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
